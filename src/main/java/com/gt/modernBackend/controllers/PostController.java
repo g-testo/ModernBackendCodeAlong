@@ -1,12 +1,11 @@
 package com.gt.modernBackend.controllers;
 
 import com.gt.modernBackend.models.Post;
-import com.gt.modernBackend.services.PostService;
+import com.gt.modernBackend.services.PostServiceImpl;
+import com.gt.modernBackend.services.PostServiceInt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -14,7 +13,7 @@ import java.util.List;
 @CrossOrigin()
 public class PostController {
     @Autowired
-    private PostService postService;
+    private PostServiceInt postService;
 
     @GetMapping // http://localhost:8080/api/posts
     public List<Post> getAllPosts(){
